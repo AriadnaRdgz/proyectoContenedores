@@ -6,6 +6,11 @@ public class Hub {
 
     public Hub(){
         hub = new Contenedor[10][12];
+        for(int i=0; i<10; i++){
+            for(int j=0; j<12; j++){
+                hub[i][j] = null;
+            }
+        }
     }
 
     public void setHub(Contenedor[][] hub) {
@@ -32,4 +37,19 @@ public class Hub {
 
     }
 
+    @Override
+    public String toString() {
+        StringBuilder salida = new StringBuilder("Mapa del hub:\n");
+        for(int i=0; i<10; i++){
+            for(int j=0; j<12; j++){
+                if(hub[i][j] == null){
+                    salida.append("| C |\t");
+                }else{
+                    salida.append("| X |\t");
+                }
+            }
+            salida.append("\n");
+        }
+        return salida.toString();
+    }
 }
