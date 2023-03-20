@@ -1,3 +1,5 @@
+package PaqG07;
+
 import javax.swing.*;
 
 public class PaquitaSalas extends JFrame{
