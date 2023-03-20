@@ -1,3 +1,5 @@
+package PaqG07;
+
 public class Contenedor {
 
         private int id;
