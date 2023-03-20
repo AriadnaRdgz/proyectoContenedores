@@ -72,7 +72,7 @@ public class Contenedor {
                 return empresaReceptora;
         }
 
-        public int procentes(String p){
+        public int procedentes(String p){
 
                 int hubs=0;
 
