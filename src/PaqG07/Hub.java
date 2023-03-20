@@ -4,6 +4,18 @@ public class Hub {
 
     private Contenedor[][] hub;
 
+    public Hub(){
+        hub = new Contenedor[10][12];
+    }
+
+    public void setHub(Contenedor[][] hub) {
+        this.hub = hub;
+    }
+
+    public Contenedor[][] getHub() {
+        return hub;
+    }
+
     public int procedentes(String p){
 
         int hubs=0;

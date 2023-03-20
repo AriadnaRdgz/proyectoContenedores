@@ -11,6 +11,16 @@ public class Contenedor {
         private String empresaEmisora;
         private String empresaReceptora;
 
+        public Contenedor(int id, int peso, String pais, boolean inspeccionado, int prioridad, String descripcion, String empresaEmisora, String empresaReceptora){
+                this.id = id;
+                this.peso = peso;
+                this.país = pais;
+                this.inspeccionado = inspeccionado;
+                this.prioridad = prioridad;
+                this.descripción = descripcion;
+                this.empresaEmisora = empresaEmisora;
+                this.empresaReceptora = empresaReceptora;
+        }
         public void setId(int id) {
                 this.id = id;
         }
@@ -71,5 +81,15 @@ public class Contenedor {
                 return empresaReceptora;
         }
 
-
+        @Override
+        public String toString() {
+                return "Contenedor numero "+ id + ":" +
+                        "\nPeso: " + peso +
+                        "\nPaís: '" + país + '\'' +
+                        "\nInspeccionado: " + inspeccionado +
+                        "\nPrioridad: " + prioridad +
+                        "\nDescripción: '" + descripción + '\'' +
+                        "\nEmpresaEmisora: '" + empresaEmisora + '\'' +
+                        "\nEmpresaReceptora: '" + empresaReceptora + '\'';
+        }
 }
