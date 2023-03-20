@@ -10,7 +10,6 @@ public class Contenedor {
         private String descripción;
         private String empresaEmisora;
         private String empresaReceptora;
-        private Contenedor[][] hub;
 
         public void setId(int id) {
                 this.id = id;
@@ -72,20 +71,5 @@ public class Contenedor {
                 return empresaReceptora;
         }
 
-        public int procedentes(String p){
-
-                int hubs=0;
-
-                for(int i=0; i<this.hub.length;i++){
-                        for(int j=0; j<this.hub[0].length; j++){
-                                if(this.hub[i][j].getPaís().equals(p)){
-                                        hubs++;
-                                }
-                        }
-                }
-
-                return hubs;
-
-        }
 
 }
