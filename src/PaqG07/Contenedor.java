@@ -11,5 +11,66 @@ public class Contenedor {
         private String empresaEmisora;
         private String empresaReceptora;
 
+        public void setId(int id) {
+                this.id = id;
+        }
+
+        public void setPeso(int peso) {
+                this.peso = peso;
+        }
+
+        public void setPaís(String país) {
+                this.país = país;
+        }
+
+        public void setInspeccionado(boolean inspeccionado) {
+                this.inspeccionado = inspeccionado;
+        }
+
+        public void setPrioridad(int prioridad) {
+                this.prioridad = prioridad;
+        }
+
+        public void setDescripción(String descripción) {
+                this.descripción = descripción;
+        }
+
+        public void setEmpresaEmisora(String empresaEmisora) {
+                this.empresaEmisora = empresaEmisora;
+        }
+
+        public void setEmpresaReceptora(String empresaReceptora) {
+                this.empresaReceptora = empresaReceptora;
+        }
+
+        public int getId() {
+                return id;
+        }
+
+        public int getPeso() {
+                return peso;
+        }
+
+        public String getPaís() {
+                return país;
+        }
+
+        public int getPrioridad() {
+                return prioridad;
+        }
+
+        public String getDescripción() {
+                return descripción;
+        }
+
+        public String getEmpresaEmisora() {
+                return empresaEmisora;
+        }
+
+        public String getEmpresaReceptora() {
+                return empresaReceptora;
+        }
+
+
 
 }
