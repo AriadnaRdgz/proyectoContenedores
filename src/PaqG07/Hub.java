@@ -64,6 +64,17 @@ public class Hub {
         }
     }
 
+    public String MostrarDatos(int id){
+        for(int i=0; i<10; i++){
+            for(int j=0; j<12; j++){
+                if(hub[i][j].getId() == id){
+                    return hub[i][j].toString();
+                }
+            }
+        }
+        return "No existe el contenedor con ID " + id;
+    }
+
     @Override
     public String toString() {
         StringBuilder salida = new StringBuilder("Mapa del hub:\n");
