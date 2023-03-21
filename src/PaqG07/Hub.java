@@ -39,24 +39,35 @@ public class Hub {
 
     public void AñadirContenedor(Contenedor contenedorañadido){
         Contenedor contenedoraux = contenedorañadido;
-        for (int i=0; i<=this.hub.length; i++){
-            for (int j=0; j<=this.hub[0].length;j++){
-                Contenedor contenedor = hub[i][j];
-                if (hub[i][j]==null){
-                    hub[i][j]=contenedoraux;
-                    break;
+        for (int i=hub.length; i>0; i--){
+            if (contenedoraux.getPrioridad()==1){
+                if (hub[i][1]==null){
+                    hub[i][1]=contenedoraux;
                 }
-                if(hub[i][j].getPrioridad() >= contenedoraux.getPrioridad()){
-                    hub[i][j]=contenedoraux;
-                    contenedoraux = contenedor;
+            }else if (contenedoraux.getPrioridad()==2){
+                if (hub[i][2]==null){
+                    hub[i][2]=contenedoraux;
                 }
+            } else  {
+                for (int j=3; j<=this.hub[0].length;j++){
+                    Contenedor contenedor = hub[i][j];
+                    if (hub[i][j]==null){
+                        hub[i][j]=contenedoraux;
+                        break;
+                    }
+                    if(hub[i][j].getPrioridad() >= contenedoraux.getPrioridad()){
+                        hub[i][j]=contenedoraux;
+                        contenedoraux = contenedor;
+                    }
+                }
+
             }
         }
     }
 
     public void QuitarContenedor(int columna){
 
-        for (int i=0; i<=this.hub.length; i++){
+        for (int i=0; i<=hub.length; i++){
             if(hub[i][columna]!=null){
                 hub[i][columna]=null;
                 break;
@@ -72,7 +83,7 @@ public class Hub {
                 }
             }
         }
-        return "No existe el contenedor con ID " + id;
+        return String ="No existe el contenedor con ID " + id;
     }
 
     @Override
