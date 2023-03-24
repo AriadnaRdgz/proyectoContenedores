@@ -21,6 +21,7 @@ public class Contenedor {
                 this.empresaEmisora = empresaEmisora;
                 this.empresaReceptora = empresaReceptora;
         }
+        //Setters y getters
         public void setId(int id) {
                 this.id = id;
         }
@@ -54,42 +55,42 @@ public class Contenedor {
         }
 
         public int getId() {
-                return id;
+                return this.id;
         }
 
         public int getPeso() {
-                return peso;
+                return this.peso;
         }
 
         public String getPaís() {
-                return país;
+                return this.país;
         }
 
         public int getPrioridad() {
-                return prioridad;
+                return this.prioridad;
         }
 
         public String getDescripción() {
-                return descripción;
+                return this.descripción;
         }
 
         public String getEmpresaEmisora() {
-                return empresaEmisora;
+                return this.empresaEmisora;
         }
 
         public String getEmpresaReceptora() {
-                return empresaReceptora;
+                return this.empresaReceptora;
         }
 
         @Override
         public String toString() {
-                return "Contenedor numero "+ id + ":" +
-                        "\nPeso: " + peso +
-                        "\nPaís: '" + país + '\'' +
-                        "\nInspeccionado: " + inspeccionado +
-                        "\nPrioridad: " + prioridad +
-                        "\nDescripción: '" + descripción + '\'' +
-                        "\nEmpresaEmisora: '" + empresaEmisora + '\'' +
-                        "\nEmpresaReceptora: '" + empresaReceptora + '\'';
+                return "Contenedor numero "+ this.id + ":" +
+                        "\nPeso: " + this.peso +
+                        "\nPaís: '" + this.país + '\'' +
+                        "\nInspeccionado: " + this.inspeccionado +
+                        "\nPrioridad: " + this.prioridad +
+                        "\nDescripción: '" + this.descripción + '\'' +
+                        "\nEmpresaEmisora: '" + this.empresaEmisora + '\'' +
+                        "\nEmpresaReceptora: '" + this.empresaReceptora + '\'';
         }
 }
