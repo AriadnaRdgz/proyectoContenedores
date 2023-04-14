@@ -83,7 +83,7 @@ public class Contenedor {
         }
 
         @Override
-        public String toString() {
+        public java.lang.String toString() {
                 return "Contenedor numero "+ this.id + ":" +
                         "\nPeso: " + this.peso +
                         "\nPaís: '" + this.país + '\'' +

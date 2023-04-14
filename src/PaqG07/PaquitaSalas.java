@@ -1,6 +1,8 @@
 package PaqG07;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class PaquitaSalas extends JFrame{
     private JTextField textField1;
@@ -21,10 +23,30 @@ public class PaquitaSalas extends JFrame{
         setSize(700,500);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
-    }
+        apilarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                java.lang.String Id = textField1.getText();
+                java.lang.String peso = textField2.getText();
+                java.lang.String pais = textField3.getText();
+                boolean inspeccionado = comboBox1.getAutoscrolls();
+                java.lang.String prioridad = textField5.getText();
+                java.lang.String descripcion = textField6.getText();
+                java.lang.String emisor = textField7.getText();
+                java.lang.String receptor = textField8.getText();
+                Contenedor contenedor = new Contenedor(Id,peso,pais,inspeccionado,prioridad,descripcion,emisor,receptor);
+                Hub hub = new Hub();
+                hub.AñadirContenedor(contenedor);
+            }
+        });
+
 
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
+    }
+
+    public static void main(String[] args) {
+        PaquitaSalas gui = new PaquitaSalas();
     }
 }

@@ -76,7 +76,7 @@ public class Hub {
         }
     }
 
-    public String MostrarDatos(int id){ //Recorremos la matriz hasta encontrar el contenedor con la id solicitada. Entonces devolvemos su toString
+    public java.lang.String MostrarDatos(int id){ //Recorremos la matriz hasta encontrar el contenedor con la id solicitada. Entonces devolvemos su toString
         for(int i=0; i<10; i++){
             for(int j=0; j<12; j++){
                 if(this.hub[i][j].getId() == id){
@@ -88,7 +88,7 @@ public class Hub {
     }
 
     @Override
-    public String toString() { //Recorremos la matriz. Si hay un contenedor mostramos "C" y si está vacío mostramos "X"
+    public java.lang.String toString() { //Recorremos la matriz. Si hay un contenedor mostramos "C" y si está vacío mostramos "X"
         StringBuilder salida = new StringBuilder("Mapa del hub:\n");
         for(int i=0; i<10; i++){
             for(int j=0; j<12; j++){
