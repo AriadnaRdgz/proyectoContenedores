@@ -40,13 +40,6 @@ public class PaquitaSalas extends JFrame{
             }
         });
 
-
-
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
-
-    public static void main(String[] args) {
-        PaquitaSalas gui = new PaquitaSalas();
-    }
 }
+
+
