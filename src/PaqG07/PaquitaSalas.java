@@ -19,7 +19,7 @@ public class PaquitaSalas extends JFrame {
     private JTextField textField4;
     private JTextPane Texto;
     private JButton mostrarContenedorButton;
-
+    Hub hub = new Hub();
 
     public PaquitaSalas() {
         setContentPane(mainPanel);
@@ -39,7 +39,7 @@ public class PaquitaSalas extends JFrame {
                 String empresaEmisora = E_Emisora.getText();
                 String empresaReceptora = E_Receptora.getText();
                 Contenedor contenedor = new Contenedor(id, peso, país, inspeccionado, prioridad, descripción, empresaEmisora, empresaReceptora);
-                Hub hub = new Hub();
+
                 hub.AñadirContenedor(contenedor);
                 Texto.setText("El contenedor ha sido apilado con éxito");
             }
