@@ -5,13 +5,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PaquitaSalas extends JFrame {
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField5;
-    private JTextField textField6;
-    private JTextField textField7;
-    private JTextField textField8;
+    private JTextField IdContenedor;
+    private JTextField PesoCont;
+    private JTextField Pais;
+    private JTextField Prioridad;
+    private JTextField Descripcion;
+    private JTextField E_Emisora;
+    private JTextField E_Receptora;
     private JButton desapilarButton;
     private JComboBox comboBox1;
     private JPanel mainPanel;
@@ -19,14 +19,7 @@ public class PaquitaSalas extends JFrame {
     private JTextField textField4;
     private JTextPane Texto;
     private JButton mostrarContenedorButton;
-    int id = Integer.parseInt(textField1.getText());
-    int peso = Integer.parseInt(textField1.getText());
-    String país = textField3.getText();
-    boolean inspeccionado = comboBox1.getAutoscrolls();
-    int prioridad = Integer.parseInt(textField1.getText());
-    String descripción = textField5.getText();
-    String empresaEmisora = textField6.getText();
-    String empresaReceptora = textField7.getText();
+
 
     public PaquitaSalas() {
         setContentPane(mainPanel);
@@ -37,7 +30,14 @@ public class PaquitaSalas extends JFrame {
         apilarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                int id = Integer.parseInt(IdContenedor.getText());
+                int peso = Integer.parseInt(PesoCont.getText());
+                String país = Pais.getText();
+                boolean inspeccionado = comboBox1.getAutoscrolls();
+                int prioridad = Integer.parseInt(Prioridad.getText());
+                String descripción = Descripcion.getText();
+                String empresaEmisora = E_Emisora.getText();
+                String empresaReceptora = E_Receptora.getText();
                 Contenedor contenedor = new Contenedor(id, peso, país, inspeccionado, prioridad, descripción, empresaEmisora, empresaReceptora);
                 Hub hub = new Hub();
                 hub.AñadirContenedor(contenedor);
