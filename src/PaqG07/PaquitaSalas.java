@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class PaquitaSalas extends JFrame{
     private JTextField textField1;
     private JTextField textField2;
@@ -17,6 +18,15 @@ public class PaquitaSalas extends JFrame{
     private JPanel mainPanel;
     private JButton apilarButton;
 
+    private Integer Id;
+    private Integer peso;
+    private String pais = textField3.getText();
+    private boolean inspeccionado = comboBox1.getAutoscrolls();
+    private Integer prioridad;
+    private String descripcion = textField6.getText();
+    private String emisor = textField7.getText();
+    private String receptor = textField8.getText();
+
     public PaquitaSalas(){
         setContentPane(mainPanel);
         setTitle("Welcome");
@@ -26,20 +36,16 @@ public class PaquitaSalas extends JFrame{
         apilarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                java.lang.String Id = textField1.getText();
-                java.lang.String peso = textField2.getText();
-                java.lang.String pais = textField3.getText();
-                boolean inspeccionado = comboBox1.getAutoscrolls();
-                java.lang.String prioridad = textField5.getText();
-                java.lang.String descripcion = textField6.getText();
-                java.lang.String emisor = textField7.getText();
-                java.lang.String receptor = textField8.getText();
+                Id = Integer.parseInt(textField1.getText());
+                peso = Integer.parseInt(textField2.getText());
+                prioridad = Integer.parseInt(textField5.getText());
                 Contenedor contenedor = new Contenedor(Id,peso,pais,inspeccionado,prioridad,descripcion,emisor,receptor);
                 Hub hub = new Hub();
                 hub.AñadirContenedor(contenedor);
             }
         });
 
-}
 
+    }
+}
 

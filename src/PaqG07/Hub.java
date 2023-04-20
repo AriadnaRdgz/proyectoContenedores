@@ -40,7 +40,7 @@ public class Hub {
 
     public void AñadirContenedor(Contenedor contenedorañadido){
         Contenedor contenedoraux = contenedorañadido;
-        for (int i=this.hub.length; i>0; i--){
+        for (int i=this.hub.length-1; i>=0; i--){
             if (contenedoraux.getPrioridad()==1){
                 if (this.hub[i][1]==null){
                     this.hub[i][1]=contenedoraux;
