@@ -4,8 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
-public class PaquitaSalas extends JFrame{
+public class PaquitaSalas extends JFrame {
     private JTextField textField1;
     private JTextField textField2;
     private JTextField textField3;
@@ -17,35 +16,35 @@ public class PaquitaSalas extends JFrame{
     private JComboBox comboBox1;
     private JPanel mainPanel;
     private JButton apilarButton;
+    private JTextField textField4;
+    private JTextPane Texto;
+    private JButton mostrarContenedorButton;
+    int id = Integer.parseInt(textField1.getText());
+    int peso = Integer.parseInt(textField1.getText());
+    String país = textField3.getText();
+    boolean inspeccionado = comboBox1.getAutoscrolls();
+    int prioridad = Integer.parseInt(textField1.getText());
+    String descripción = textField5.getText();
+    String empresaEmisora = textField6.getText();
+    String empresaReceptora = textField7.getText();
 
-    private Integer Id;
-    private Integer peso;
-    private String pais = textField3.getText();
-    private boolean inspeccionado = comboBox1.getAutoscrolls();
-    private Integer prioridad;
-    private String descripcion = textField6.getText();
-    private String emisor = textField7.getText();
-    private String receptor = textField8.getText();
-
-    public PaquitaSalas(){
+    public PaquitaSalas() {
         setContentPane(mainPanel);
-        setTitle("Welcome");
-        setSize(700,500);
+        setTitle("¡Hola, soy VInce con ApilaciónWOW");
+        setSize(700, 500);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
         apilarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Id = Integer.parseInt(textField1.getText());
-                peso = Integer.parseInt(textField2.getText());
-                prioridad = Integer.parseInt(textField5.getText());
-                Contenedor contenedor = new Contenedor(Id,peso,pais,inspeccionado,prioridad,descripcion,emisor,receptor);
+
+                Contenedor contenedor = new Contenedor(id, peso, país, inspeccionado, prioridad, descripción, empresaEmisora, empresaReceptora);
                 Hub hub = new Hub();
                 hub.AñadirContenedor(contenedor);
+                Texto.setText("El contenedor ha sido apilado con éxito");
             }
         });
-
-
     }
 }
+
 
