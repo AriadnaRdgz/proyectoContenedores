@@ -76,7 +76,7 @@ public class Hub {
         }
     }
 
-    public java.lang.String MostrarDatos(int id){ //Recorremos la matriz hasta encontrar el contenedor con la id solicitada. Entonces devolvemos su toString
+    public String MostrarDatos(int id){ //Recorremos la matriz hasta encontrar el contenedor con la id solicitada. Entonces devolvemos su toString
         for(int i=0; i<10; i++){
             for(int j=0; j<12; j++){
                 if(this.hub[i][j].getId() == id){
