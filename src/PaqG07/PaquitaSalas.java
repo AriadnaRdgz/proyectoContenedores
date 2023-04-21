@@ -13,22 +13,25 @@ public class PaquitaSalas extends JFrame {
     private JTextField E_Emisora;
     private JTextField E_Receptora;
     private JButton desapilarButton;
-    private JComboBox comboBox1;
+    //private JComboBox comboBox1;
     private JPanel mainPanel;
     private JButton apilarButton;
     private JTextField textField4;
     private JTextPane Texto;
     private JButton mostrarContenedorButton;
+    private JComboBox InspeccionBool;
+    private JTextField Fila;
 
     private Integer id;
     private Integer peso;
     private String país = Pais.getText();
-    private boolean inspeccionado = comboBox1.getAutoscrolls();
+    private boolean inspeccionado = InspeccionBool.getAutoscrolls();
     private Integer prioridad;
     private String descripción = Descripcion.getText();
     private String empresaEmisora = E_Emisora.getText();
     private String empresaReceptora = E_Receptora.getText();
     private Integer columna;
+    private Integer fila;
 
     protected Hub hub = new Hub();
 
@@ -72,9 +75,11 @@ public class PaquitaSalas extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                id = Integer.parseInt(IdContenedor.getText());
+                System.out.println(hub.toString());
 
-                Texto.setText(hub.MostrarDatos(id));
+                //id = Integer.parseInt(IdContenedor.getText());
+
+                //Texto.setText(hub.MostrarDatos(id));
 
             }
         });

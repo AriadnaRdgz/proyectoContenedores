@@ -42,12 +42,12 @@ public class Hub {
         Contenedor contenedoraux = contenedorañadido;
         for (int i=this.hub.length -1; i>=0; i--){
             if (contenedoraux.getPrioridad()==1){
-                if (this.hub[i][1]==null){
-                    this.hub[i][1]=contenedoraux;
+                if (this.hub[i][0]==null){
+                    this.hub[i][0]=contenedoraux;
                 }
             }else if (contenedoraux.getPrioridad()==2){
-                if (this.hub[i][2]==null){
-                    this.hub[i][2]=contenedoraux;
+                if (this.hub[i][1]==null){
+                    this.hub[i][1]=contenedoraux;
                 }
             } else  {
                 for (int j=3; j<=this.hub[0].length;j++){
@@ -88,7 +88,7 @@ public class Hub {
     }
 
     @Override
-    public java.lang.String toString() { //Recorremos la matriz. Si hay un contenedor mostramos "C" y si está vacío mostramos "X"
+    public String toString() { //Recorremos la matriz. Si hay un contenedor mostramos "C" y si está vacío mostramos "X"
         StringBuilder salida = new StringBuilder("Mapa del hub:\n");
         for(int i=0; i<10; i++){
             for(int j=0; j<12; j++){
