@@ -1,6 +1,7 @@
 package PaqG07;
 
 import javax.swing.*;
+import javax.swing.plaf.basic.BasicTabbedPaneUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,6 +24,8 @@ public class PaquitaSalas extends JFrame {
     private JTabbedPane tabbedPane1;
     private JButton mostrarHubButton;
     private JTextField IdContenedor2;
+    private JTextField paisCoso;
+    private JButton paisButton;
 
     private Integer id;
     private Integer peso;
@@ -40,8 +43,8 @@ public class PaquitaSalas extends JFrame {
     public PaquitaSalas() {
         setContentPane(mainPanel);
         setTitle("Programa contenedores");
-        setSize(500, 550);
-        setMinimumSize(new Dimension(500, 550));
+        setSize(500, 650);
+        setMinimumSize(new Dimension(500, 650));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
