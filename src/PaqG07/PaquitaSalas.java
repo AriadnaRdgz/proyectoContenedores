@@ -19,7 +19,6 @@ public class PaquitaSalas extends JFrame {
     private JTextPane Texto;
     private JButton mostrarContenedorButton;
     private JComboBox InspeccionBool;
-    private JTextField Fila;
 
     private Integer id;
     private Integer peso;
@@ -30,7 +29,6 @@ public class PaquitaSalas extends JFrame {
     private String empresaEmisora = E_Emisora.getText();
     private String empresaReceptora = E_Receptora.getText();
     private Integer columna;
-    private Integer fila;
 
     protected Hub hub = new Hub();
 
@@ -51,9 +49,12 @@ public class PaquitaSalas extends JFrame {
 
                 Contenedor contenedor = new Contenedor(id, peso, país, inspeccionado, prioridad, descripción, empresaEmisora, empresaReceptora);
 
-                hub.AñadirContenedor(contenedor);
+                if(hub.AñadirContenedor(contenedor) == 0){
+                    Texto.setText("El contenedor ha sido apilado con éxito");
+                }else{
+                    Texto.setText("No se ha podido apilar este contenedor, el hub está lleno para un contenedor con esta prioridad");
+                }
 
-                Texto.setText("El contenedor ha sido apilado con éxito");
             }
         });
 
@@ -74,7 +75,7 @@ public class PaquitaSalas extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                //System.out.println(hub.toString());
+                System.out.println(hub.toString());
 
                 id = Integer.parseInt(IdContenedor.getText());
 

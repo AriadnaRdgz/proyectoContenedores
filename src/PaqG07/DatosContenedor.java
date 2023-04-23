@@ -1,6 +1,8 @@
 package PaqG07;
 
 import javax.swing.*;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 public class DatosContenedor extends JFrame{
     private JList list1;
@@ -12,9 +14,11 @@ public class DatosContenedor extends JFrame{
         setContentPane(panel1);
         setTitle("Datos del contenedor");
 
-        setSize(700, 500);
+        setSize(370, 200);
 
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
+
         setVisible(true);
 
         datitos.setText(datos.MostrarDatos(id));

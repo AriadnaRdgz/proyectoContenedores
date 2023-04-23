@@ -38,32 +38,30 @@ public class Hub {
 
     }
 
-    public void AñadirContenedor(Contenedor contenedorañadido){
-        Contenedor contenedoraux = contenedorañadido;
-        for (int i=0; i<this.hub.length; i++){
-            if (contenedoraux.getPrioridad()==1){
+    public int AñadirContenedor(Contenedor contenedorañadido){
+
+        for (int i=this.hub.length-1; i>=0; i--){
+            if (contenedorañadido.getPrioridad()==1){
                 if (this.hub[i][0]==null){
-                    this.hub[i][0]=contenedoraux;
+                    this.hub[i][0]=contenedorañadido;
+                    return 0;
                 }
-            }else if (contenedoraux.getPrioridad()==2){
+            }else if (contenedorañadido.getPrioridad()==2){
                 if (this.hub[i][1]==null){
-                    this.hub[i][1]=contenedoraux;
+                    this.hub[i][1]=contenedorañadido;
+                    return 0;
                 }
             } else  {
                 for (int j=2; j<this.hub[i].length;j++){
                     Contenedor contenedor = this.hub[i][j];
                     if (this.hub[i][j]==null){
-                        this.hub[i][j]=contenedoraux;
-                        break;
-                    }
-                    if(this.hub[i][j].getPrioridad() >= contenedoraux.getPrioridad()){
-                        this.hub[i][j]=contenedoraux;
-                        contenedoraux = contenedor;
+                        this.hub[i][j]=contenedorañadido;
+                        return 0;
                     }
                 }
-
             }
         }
+        return 1;
     }
 
     public void QuitarContenedor(int columna){
