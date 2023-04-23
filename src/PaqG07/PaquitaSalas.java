@@ -89,13 +89,24 @@ public class PaquitaSalas extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                //System.out.println(hub.toString());
+                Texto.setText(hub.MostrarDatos(Integer.parseInt(IdContenedor2.getText())));
 
-                id = Integer.parseInt(IdContenedor.getText());
-                Texto.setText(hub.MostrarDatos(id));
+            }
+        });
+/*
+        paisButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
-                //DatosContenedor myFrame = new DatosContenedor(hub, id);
+                Texto.setText(hub.procedentes(paisCoso.getText()));
 
+            }
+        });*/
+
+        mostrarContenedorButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Texto.setText(hub.toString());
             }
         });
 
