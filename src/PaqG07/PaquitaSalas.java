@@ -1,6 +1,7 @@
 package PaqG07;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -8,7 +9,7 @@ public class PaquitaSalas extends JFrame {
     private JTextField IdContenedor;
     private JTextField PesoCont;
     private JTextField Pais;
-    private JTextField Prioridad;
+    private JComboBox Prioridad;
     private JTextField Descripcion;
     private JTextField E_Emisora;
     private JTextField E_Receptora;
@@ -19,6 +20,9 @@ public class PaquitaSalas extends JFrame {
     private JTextPane Texto;
     private JButton mostrarContenedorButton;
     private JComboBox InspeccionBool;
+    private JTabbedPane tabbedPane1;
+    private JButton mostrarHubButton;
+    private JTextField IdContenedor2;
 
     private Integer id;
     private Integer peso;
@@ -29,13 +33,15 @@ public class PaquitaSalas extends JFrame {
     private String empresaEmisora = E_Emisora.getText();
     private String empresaReceptora = E_Receptora.getText();
     private Integer columna;
+    private Integer fila;
 
     protected Hub hub = new Hub();
 
     public PaquitaSalas() {
         setContentPane(mainPanel);
-        setTitle("¡Hola, soy VInce con ApilaciónWOW");
-        setSize(700, 500);
+        setTitle("Programa contenedores");
+        setSize(500, 550);
+        setMinimumSize(new Dimension(500, 550));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
 
@@ -45,7 +51,7 @@ public class PaquitaSalas extends JFrame {
 
                 id = Integer.parseInt(IdContenedor.getText());
                 peso = Integer.parseInt(PesoCont.getText());
-                prioridad = Integer.parseInt(Prioridad.getText());
+                prioridad = Integer.parseInt(Prioridad.getModel().getSelectedItem().toString());
 
                 Contenedor contenedor = new Contenedor(id, peso, país, inspeccionado, prioridad, descripción, empresaEmisora, empresaReceptora);
 
@@ -75,7 +81,7 @@ public class PaquitaSalas extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                System.out.println(hub.toString());
+                //System.out.println(hub.toString());
 
                 id = Integer.parseInt(IdContenedor.getText());
 
