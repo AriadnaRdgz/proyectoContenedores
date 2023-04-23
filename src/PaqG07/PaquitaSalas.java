@@ -13,7 +13,6 @@ public class PaquitaSalas extends JFrame {
     private JTextField E_Emisora;
     private JTextField E_Receptora;
     private JButton desapilarButton;
-    //private JComboBox comboBox1;
     private JPanel mainPanel;
     private JButton apilarButton;
     private JTextField textField4;
@@ -75,16 +74,18 @@ public class PaquitaSalas extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                System.out.println(hub.toString());
+                //System.out.println(hub.toString());
 
-                //id = Integer.parseInt(IdContenedor.getText());
+                id = Integer.parseInt(IdContenedor.getText());
 
-                //Texto.setText(hub.MostrarDatos(id));
+                DatosContenedor myFrame = new DatosContenedor(hub, id);
 
             }
         });
 
     }
+
+
 }
 
 
