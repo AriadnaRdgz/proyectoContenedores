@@ -40,7 +40,7 @@ public class Hub {
 
     public void AñadirContenedor(Contenedor contenedorañadido){
         Contenedor contenedoraux = contenedorañadido;
-        for (int i=this.hub.length -1; i>=0; i--){
+        for (int i=0; i<this.hub.length; i++){
             if (contenedoraux.getPrioridad()==1){
                 if (this.hub[i][0]==null){
                     this.hub[i][0]=contenedoraux;
@@ -50,7 +50,7 @@ public class Hub {
                     this.hub[i][1]=contenedoraux;
                 }
             } else  {
-                for (int j=3; j<=this.hub[0].length;j++){
+                for (int j=2; j<this.hub[i].length;j++){
                     Contenedor contenedor = this.hub[i][j];
                     if (this.hub[i][j]==null){
                         this.hub[i][j]=contenedoraux;
@@ -68,7 +68,7 @@ public class Hub {
 
     public void QuitarContenedor(int columna){
 
-        for (int i=0; i<=this.hub.length; i++){
+        for (int i=this.hub.length-1; i>=0; i--){
             if(this.hub[i][columna]!=null){
                 this.hub[i][columna]=null;
                 break;
