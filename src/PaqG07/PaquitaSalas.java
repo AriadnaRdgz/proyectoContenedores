@@ -101,7 +101,7 @@ public class PaquitaSalas extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Texto.setText(hub.procedentes(paisCoso.getText()));
+                Texto.setText(String.valueOf(hub.procedentes(paisCoso.getText())));
 
             }
         });
