@@ -43,6 +43,7 @@ public class PaquitaSalas extends JFrame {
         setSize(500, 550);
         setMinimumSize(new Dimension(500, 550));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
         setVisible(true);
 
         apilarButton.addActionListener(new ActionListener() {
@@ -53,14 +54,21 @@ public class PaquitaSalas extends JFrame {
                 peso = Integer.parseInt(PesoCont.getText());
                 prioridad = Integer.parseInt(Prioridad.getModel().getSelectedItem().toString());
 
+                país = Pais.getText();
+                descripción = Descripcion.getText();
+                empresaEmisora = E_Emisora.getText();
+                empresaReceptora = E_Receptora.getText();
+
                 Contenedor contenedor = new Contenedor(id, peso, país, inspeccionado, prioridad, descripción, empresaEmisora, empresaReceptora);
-
-                if(hub.AñadirContenedor(contenedor) == 0){
-                    Texto.setText("El contenedor ha sido apilado con éxito");
+                int res = hub.AñadirContenedor(contenedor);
+                if(res == 0){
+                    DatosContenedor myFrame = new DatosContenedor("El contenedor ha sido apilado con éxito");
+                    System.out.println(hub.toString());
+                }else if(res == 1){
+                    DatosContenedor myFrame = new DatosContenedor("No se ha podido apilar este contenedor, el hub está lleno para un contenedor con esta prioridad");
                 }else{
-                    Texto.setText("No se ha podido apilar este contenedor, el hub está lleno para un contenedor con esta prioridad");
+                    DatosContenedor myFrame = new DatosContenedor("El Id de este contenedor coincide con otro Id del hub, por favor revise el Id");
                 }
-
             }
         });
 
@@ -84,8 +92,9 @@ public class PaquitaSalas extends JFrame {
                 //System.out.println(hub.toString());
 
                 id = Integer.parseInt(IdContenedor.getText());
+                Texto.setText(hub.MostrarDatos(id));
 
-                DatosContenedor myFrame = new DatosContenedor(hub, id);
+                //DatosContenedor myFrame = new DatosContenedor(hub, id);
 
             }
         });

@@ -9,19 +9,19 @@ public class DatosContenedor extends JFrame{
     protected JPanel panel1;
     private JTextPane datitos;
 
-    public DatosContenedor(Hub datos, Integer id){
+    public DatosContenedor(String s){
 
         setContentPane(panel1);
         setTitle("Datos del contenedor");
 
-        setSize(370, 200);
+        setSize(370, 90);
 
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
         setVisible(true);
 
-        datitos.setText(datos.MostrarDatos(id));
+        datitos.setText(s);
 
     }
 
