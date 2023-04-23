@@ -86,9 +86,9 @@ public class Hub {
 
     public void QuitarContenedor(int columna){
 
-        for (int i=this.hub.length-1; i>=0; i--){
-            if(this.hub[i][columna]!=null){
-                this.hub[i][columna]=null;
+        for (int i=0; i<this.hub.length; i++){
+            if(this.hub[i][columna-1]!=null){
+                this.hub[i][columna-1]=null;
                 break;
             }
         }
@@ -102,9 +102,9 @@ public class Hub {
         for(int i=0; i<10; i++){
             for(int j=0; j<12; j++){
                 if(this.hub[i][j] == null){
-                    salida.append("| C |\t");
-                }else{
                     salida.append("| X |\t");
+                }else{
+                    salida.append("| C |\t");
                 }
             }
             salida.append("\n");
