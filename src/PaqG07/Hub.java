@@ -38,7 +38,24 @@ public class Hub {
 
     }
 
+    public String MostrarDatos(int id){ //Recorremos la matriz hasta encontrar el contenedor con la id solicitada. Entonces devolvemos su toString
+        for(int i=0; i<10; i++){
+            for(int j=0; j<12; j++){
+                if(this.hub[i][j] != null){
+                    if(this.hub[i][j].getId() == id){
+                        return this.hub[i][j].toString();
+                    }
+                }
+            }
+        }
+        return "No existe el contenedor con ID " + id;
+    }
+
     public int AñadirContenedor(Contenedor contenedorañadido){
+
+        if (!(this.MostrarDatos(contenedorañadido.getId()).equals ("No existe el contenedor con ID " + contenedorañadido.getId()))){
+            return 2;
+        }
 
         for (int i=this.hub.length-1; i>=0; i--){
             if (contenedorañadido.getPrioridad()==1){
@@ -46,13 +63,11 @@ public class Hub {
                     this.hub[i][0]=contenedorañadido;
                     return 0;
                 }
-                if(contenedorañadido.getId() == this.hub[i][0].getId()){return 2;}
             }else if (contenedorañadido.getPrioridad()==2){
                 if (this.hub[i][1]==null){
                     this.hub[i][1]=contenedorañadido;
                     return 0;
                 }
-                if(contenedorañadido.getId() == this.hub[i][0].getId()){return 2;}
             } else  {
                 for (int j=2; j<this.hub[i].length;j++){
                     Contenedor contenedor = this.hub[i][j];
@@ -60,7 +75,6 @@ public class Hub {
                         this.hub[i][j]=contenedorañadido;
                         return 0;
                     }
-                    if(contenedorañadido.getId() == this.hub[i][0].getId()){return 2;}
                 }
             }
         }
@@ -77,18 +91,7 @@ public class Hub {
         }
     }
 
-    public String MostrarDatos(int id){ //Recorremos la matriz hasta encontrar el contenedor con la id solicitada. Entonces devolvemos su toString
-        for(int i=0; i<10; i++){
-            for(int j=0; j<12; j++){
-                if(this.hub[i][j] != null){
-                    if(this.hub[i][j].getId() == id){
-                        return this.hub[i][j].toString();
-                    }
-                }
-            }
-        }
-        return "No existe el contenedor con ID " + id;
-    }
+
 
     @Override
     public String toString() { //Recorremos la matriz. Si hay un contenedor mostramos "C" y si está vacío mostramos "X"

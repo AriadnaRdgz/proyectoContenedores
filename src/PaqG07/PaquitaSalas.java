@@ -62,12 +62,12 @@ public class PaquitaSalas extends JFrame {
                 Contenedor contenedor = new Contenedor(id, peso, país, inspeccionado, prioridad, descripción, empresaEmisora, empresaReceptora);
                 int res = hub.AñadirContenedor(contenedor);
                 if(res == 0){
-                    DatosContenedor myFrame = new DatosContenedor("El contenedor ha sido apilado con éxito");
+                    DatosContenedor cositas = new DatosContenedor("El contenedor ha sido apilado con éxito", 370, 90);
                     System.out.println(hub.toString());
                 }else if(res == 1){
-                    DatosContenedor myFrame = new DatosContenedor("No se ha podido apilar este contenedor, el hub está lleno para un contenedor con esta prioridad");
+                    DatosContenedor cositas = new DatosContenedor("No se ha podido apilar este contenedor, el hub está lleno para un contenedor con esta prioridad", 370, 90);
                 }else{
-                    DatosContenedor myFrame = new DatosContenedor("El Id de este contenedor coincide con otro Id del hub, por favor revise el Id");
+                    DatosContenedor cositas = new DatosContenedor("El Id de este contenedor coincide con otro Id del hub, por favor revise el Id", 370, 90);
                 }
             }
         });
@@ -93,7 +93,7 @@ public class PaquitaSalas extends JFrame {
 
             }
         });
-/*
+
         paisButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -101,18 +101,16 @@ public class PaquitaSalas extends JFrame {
                 Texto.setText(hub.procedentes(paisCoso.getText()));
 
             }
-        });*/
+        });
 
-        mostrarContenedorButton.addActionListener(new ActionListener() {
+        mostrarHubButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Texto.setText(hub.toString());
+                DatosContenedor cositas = new DatosContenedor(hub.toString(), 900, 410);
             }
         });
 
     }
 
-
 }
-
 

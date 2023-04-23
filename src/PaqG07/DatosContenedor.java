@@ -9,12 +9,12 @@ public class DatosContenedor extends JFrame{
     protected JPanel panel1;
     private JTextPane datitos;
 
-    public DatosContenedor(String s){
+    public DatosContenedor(String s, int w, int h){
 
         setContentPane(panel1);
         setTitle("Datos del contenedor");
 
-        setSize(370, 90);
+        setSize(w, h);
 
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
