@@ -4,13 +4,8 @@ public class Hub {
 
     private Contenedor[][] hub;
 
-    public Hub(){ //Llenamos el hub con nulls
+    public Hub(){
         this.hub = new Contenedor[10][12];
-        for(int i=0; i<10; i++){
-            for(int j=0; j<12; j++){
-                this.hub[i][j] = null;
-            }
-        }
     }
 
     //Setters y getters
