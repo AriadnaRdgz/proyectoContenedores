@@ -45,7 +45,7 @@ public class Puerto {
     public String contenedor(int id){
         for (int i = 0; i < 3; i++) {
             if(!hubs[i].MostrarDatos(id).equals("err")){
-               return hubs[i].getHub().toString();
+               return hubs[i].MostrarDatos(id);
             }
         }
         return "No existe el contenedor con ID " + id;
