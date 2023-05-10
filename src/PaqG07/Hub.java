@@ -56,7 +56,7 @@ public class Hub {
 
     public int AñadirContenedor(Contenedor contenedorañadido){
 
-        if (!(this.MostrarDatos(contenedorañadido.getId()) == 1)){
+        if (!(this.MostrarDatos(contenedorañadido.getId()).equals("err"))){
             return 2;
         }
 
