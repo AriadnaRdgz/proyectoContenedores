@@ -40,23 +40,24 @@ public class Hub {
         return hubs;
 
     }
-
-    public String MostrarDatos(int id){ //Recorremos la matriz hasta encontrar el contenedor con la id solicitada. Entonces devolvemos su toString
+    protected int fila, columna;
+    public int MostrarDatos(int id){ //Recorremos la matriz hasta encontrar el contenedor con la id solicitada. Entonces devolvemos su toString
         for(int i=0; i<10; i++){
             for(int j=0; j<12; j++){
                 if(this.hub[i][j] != null){
                     if(this.hub[i][j].getId() == id){
-                        return this.hub[i][j].toString();
+                        fila = i; columna = j;
+                        return 0;
                     }
                 }
             }
         }
-        return "No existe el contenedor con ID " + id;
+        return 1;
     }
 
     public int AñadirContenedor(Contenedor contenedorañadido){
 
-        if (!(this.MostrarDatos(contenedorañadido.getId()).equals ("No existe el contenedor con ID " + contenedorañadido.getId()))){
+        if (!(this.MostrarDatos(contenedorañadido.getId()) == 1)){
             return 2;
         }
 

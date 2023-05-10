@@ -39,6 +39,16 @@ public class Puerto {
         for (int i = 0; i < 3; i++) {
             c = c + hubs[i].procedentes(p);
         }
+        return c;
+    }
+
+    public String contenedor(int id){
+        for (int i = 0; i < 3; i++) {
+            if(hubs[i].MostrarDatos(id)==0){
+               return hubs[i].getHub().toString();
+            }
+        }
+        return "No existe el contenedor con ID " + id;
     }
 
 }

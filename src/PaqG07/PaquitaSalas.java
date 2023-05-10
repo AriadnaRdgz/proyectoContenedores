@@ -97,7 +97,7 @@ public class PaquitaSalas extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Texto.setText(hub.MostrarDatos(Integer.parseInt(IdContenedor2.getText())));
+                Texto.setText(puerto.contenedor(Integer.parseInt(IdContenedor2.getText())));
 
             }
         });
@@ -114,6 +114,7 @@ public class PaquitaSalas extends JFrame {
         mostrarHubButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 DatosContenedor cositas = new DatosContenedor(hub.toString(), 900, 410);
             }
         });
