@@ -86,7 +86,7 @@ public class PaquitaSalas extends JFrame {
 
                 columna = Integer.parseInt(textField4.getText());
 
-                hub.QuitarContenedor(columna);
+                puerto.desapilar(columna);
 
                 Texto.setText("El contenedor ha sido desapilado");
 
@@ -106,7 +106,7 @@ public class PaquitaSalas extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Texto.setText(String.valueOf(hub.procedentes(paisCoso.getText())));
+                Texto.setText(String.valueOf(puerto.paises(paisCoso.getText())));
 
             }
         });

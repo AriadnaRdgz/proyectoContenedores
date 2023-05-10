@@ -26,12 +26,19 @@ public class Puerto {
     }
 
     public int desapilar(int columna){
-        for (int i = 2; i >= 0; --i) {
+        for (int i = 2; i >= 0; i--) {
             if(hubs[i].QuitarContenedor(columna) == 0){
                 return 0;
             }
         }
         return 1;
+    }
+
+    public int paises(String p){
+        int c = 0;
+        for (int i = 0; i < 3; i++) {
+            c = c + hubs[i].procedentes(p);
+        }
     }
 
 }
