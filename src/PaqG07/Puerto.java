@@ -11,10 +11,6 @@ public class Puerto {
         }
     }
 
-    public Hub mostrar(int i){
-        return hubs[i];
-    }
-
     public int apilar(Contenedor cont){
         for (int i = 0; i < 3; i++) {
             if(hubs[i].AñadirContenedor(cont) == 0){
