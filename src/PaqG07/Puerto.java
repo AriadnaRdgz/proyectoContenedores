@@ -5,6 +5,7 @@ public class Puerto {
     Hub[] hubs;
 
     public Puerto(){
+        this.hubs = new Hub[3];
         for (int i = 0; i < 3; i++) {
             hubs[i] = new Hub();
         }
