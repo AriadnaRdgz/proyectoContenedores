@@ -26,7 +26,7 @@ public class Puerto {
     }
 
     public int desapilar(int columna){
-        for (int i = 2; i >= 0; i--) {
+        for (int i = 2; i >= 0; --i) {
             if(hubs[i].QuitarContenedor(columna) == 0){
                 return 0;
             }
@@ -51,4 +51,12 @@ public class Puerto {
         return "No existe el contenedor con ID " + id;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder mapita = new StringBuilder("");
+        for(int i=0; i<3; i++){
+            mapita.append("Hub ").append(i + 1).append("\n").append(hubs[i].toString()).append("\n");
+        }
+        return mapita.toString();
+    }
 }
