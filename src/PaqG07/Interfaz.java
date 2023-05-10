@@ -1,12 +1,11 @@
 package PaqG07;
 
 import javax.swing.*;
-import javax.swing.plaf.basic.BasicTabbedPaneUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PaquitaSalas extends JFrame {
+public class Interfaz extends JFrame {
     private JTextField IdContenedor;
     private JTextField PesoCont;
     private JTextField Pais;
@@ -40,7 +39,7 @@ public class PaquitaSalas extends JFrame {
 
     protected Puerto puerto = new Puerto();
 
-    public PaquitaSalas() {
+    public Interfaz() {
         setContentPane(mainPanel);
         setTitle("Programa contenedores");
         setSize(500, 650);
