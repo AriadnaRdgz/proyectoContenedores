@@ -99,7 +99,7 @@ public class Hub {
 
     @Override
     public String toString() { //Recorremos la matriz. Si hay un contenedor mostramos "C" y si está vacío mostramos "X"
-        StringBuilder salida = new StringBuilder("Mapa del hub:\n");
+        StringBuilder salida = new StringBuilder();
         for(int i=0; i<10; i++){
             for(int j=0; j<12; j++){
                 if(this.hub[i][j] == null){
