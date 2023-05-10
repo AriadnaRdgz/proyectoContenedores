@@ -34,4 +34,12 @@ public class Puerto {
         return 1;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder mapita = new StringBuilder("");
+        for(int i=0; i<3; i++){
+            mapita.append("Hub ").append(i + 1).append("\n").append(hubs[i].toString()).append("\n");
+        }
+        return mapita.toString();
+    }
 }
