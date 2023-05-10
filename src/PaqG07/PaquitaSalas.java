@@ -38,7 +38,7 @@ public class PaquitaSalas extends JFrame {
     private Integer columna;
     private Integer fila;
 
-    protected Hub hub = new Hub();
+    protected Puerto puerto = new Puerto();
 
     public PaquitaSalas() {
         setContentPane(mainPanel);
@@ -63,10 +63,15 @@ public class PaquitaSalas extends JFrame {
                 empresaReceptora = E_Receptora.getText();
 
                 Contenedor contenedor = new Contenedor(id, peso, país, inspeccionado, prioridad, descripción, empresaEmisora, empresaReceptora);
-                int res = hub.AñadirContenedor(contenedor);
+                int res = puerto.apilar(contenedor);
                 if(res == 0){
                     DatosContenedor cositas = new DatosContenedor("El contenedor ha sido apilado con éxito", 370, 90);
-                    System.out.println(hub.toString());
+
+                    for (int i = 0; i < 3; i++) {
+                        System.out.println(puerto.mostrar(1).toString());
+                        System.out.println("\n");
+                    }
+
                 }else if(res == 1){
                     DatosContenedor cositas = new DatosContenedor("No se ha podido apilar este contenedor, el hub está lleno para un contenedor con esta prioridad", 370, 90);
                 }else{

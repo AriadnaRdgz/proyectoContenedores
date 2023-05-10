@@ -84,14 +84,15 @@ public class Hub {
         return 1;
     }
 
-    public void QuitarContenedor(int columna){
+    public int QuitarContenedor(int columna){
 
         for (int i=0; i<this.hub.length; i++){
             if(this.hub[i][columna-1]!=null){
                 this.hub[i][columna-1]=null;
-                break;
+                return 0;
             }
         }
+        return 1;
     }
 
 
