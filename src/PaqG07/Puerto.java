@@ -53,10 +53,10 @@ public class Puerto {
 
     @Override
     public String toString() {
-        StringBuilder mapita = new StringBuilder("");
+        StringBuilder mapa = new StringBuilder("");
         for(int i=0; i<3; i++){
-            mapita.append("Hub ").append(i + 1).append("\n").append(hubs[i].toString()).append("\n");
+            mapa.append("Hub ").append(i + 1).append("\n").append(hubs[i].toString()).append("\n");
         }
-        return mapita.toString();
+        return mapa.toString();
     }
 }

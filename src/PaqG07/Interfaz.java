@@ -114,7 +114,7 @@ public class Interfaz extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                DatosContenedor cositas = new DatosContenedor(hub.toString(), 900, 410);
+                DatosContenedor cositas = new DatosContenedor(puerto.toString(), 900, 410);
             }
         });
 
