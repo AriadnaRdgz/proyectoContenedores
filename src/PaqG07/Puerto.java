@@ -44,7 +44,7 @@ public class Puerto {
 
     public String contenedor(int id){
         for (int i = 0; i < 3; i++) {
-            if(hubs[i].MostrarDatos(id)==0){
+            if(!hubs[i].MostrarDatos(id).equals("err")){
                return hubs[i].getHub().toString();
             }
         }
@@ -53,7 +53,7 @@ public class Puerto {
 
     @Override
     public String toString() {
-        StringBuilder mapa = new StringBuilder("");
+        StringBuilder mapa = new StringBuilder();
         for(int i=0; i<3; i++){
             mapa.append("Hub ").append(i + 1).append("\n").append(hubs[i].toString()).append("\n");
         }

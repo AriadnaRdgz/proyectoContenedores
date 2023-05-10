@@ -40,19 +40,18 @@ public class Hub {
         return hubs;
 
     }
-    protected int fila, columna;
-    public int MostrarDatos(int id){ //Recorremos la matriz hasta encontrar el contenedor con la id solicitada. Entonces devolvemos su toString
+
+    public String MostrarDatos(int id){ //Recorremos la matriz hasta encontrar el contenedor con la id solicitada. Entonces devolvemos su toString
         for(int i=0; i<10; i++){
             for(int j=0; j<12; j++){
                 if(this.hub[i][j] != null){
                     if(this.hub[i][j].getId() == id){
-                        fila = i; columna = j;
-                        return 0;
+                        return this.hub[i][j].toString();
                     }
                 }
             }
         }
-        return 1;
+        return "err";
     }
 
     public int AñadirContenedor(Contenedor contenedorañadido){
